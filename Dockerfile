@@ -24,13 +24,14 @@ RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-1.9.1 > /usr/local
     chmod +x /usr/local/bin/docker-1.9.1
     
 RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-1.10.3 > /usr/local/bin/docker-1.10.3 && \
-    chmod +x /usr/local/bin/docker-1.10.3
+    chmod +x /usr/local/bin/docker-1.10.3 && \
+    ln -s /usr/local/bin/docker-1.10.3 /usr/local/bin/docker
 
-RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-1.11.0.tgz > /tmp/docker-1.11.0.tgz && \
-    cd /tmp && tar -xzf ./docker-1.11.0.tgz && \
-    rm /tmp/docker-1.11.0.tgz && \
-    mv /tmp/docker/docker /usr/local/bin/docker && \
-    chmod +x /usr/local/bin/docker
+#RUN curl -L https://get.docker.com/builds/Linux/x86_64/docker-1.11.0.tgz > /tmp/docker-1.11.0.tgz && \
+#    cd /tmp && tar -xzf ./docker-1.11.0.tgz && \
+#    rm /tmp/docker-1.11.0.tgz && \
+#    mv /tmp/docker/docker /usr/local/bin/docker && \
+#    chmod +x /usr/local/bin/docker
 
 RUN curl -L https://github.com/docker/compose/releases/download/1.7.0/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose
