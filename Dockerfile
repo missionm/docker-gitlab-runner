@@ -42,5 +42,5 @@ RUN dpkg -i dumb-init_*.deb
 ENTRYPOINT ["/usr/bin/dumb-init", "/entrypoint"]
 CMD ["run", "--user=root", "--working-directory=/usr/local/gitlab-runner"]
 
-RUN git config --global user.email "ci-runner@example.com" && \
+RUN git config --global user.email "gitlab@missionmode.com" && \
     git config --global user.name "CI Runner"
